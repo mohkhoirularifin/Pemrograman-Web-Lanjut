@@ -13,15 +13,15 @@ export class CoursesComponent implements OnInit {
 
   binding = 'property-binding';
   imageUrl = 'http://lorempixel.com/400/200';
-  // percobaan = 'ini percobaan';
+  percobaan = 'ini percobaan';
   colSpan = 2;
-  isActive=true;
+  isActive=false;
   // nama = 'Khoirul';
 
-  // onSave($event){
-  //   $event.stopPropagation();
-  //   console.log("onSave Sudah diKlick", $event);
-  // }
+  onSave($event){
+    // $event.stopPropagation();
+    console.log("onSave Sudah diKlick", $event);
+  }
 
   // onDivClick($event){
   //   console.log("onDivClick Sudah diKlick", $event);
