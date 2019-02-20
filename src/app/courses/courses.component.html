@@ -60,11 +60,10 @@
   </button>
 </div>
 
-<!-- <input
+<input
   type="text"
-  [value]="nama"
-  (keyup.enter)="nama = $event.target.value; onKeyUp()"
-/> -->
+  #nama (keyup.enter)="onKeyUp(nama.value)"
+/>
 
 <!-- <input
   type="text"
