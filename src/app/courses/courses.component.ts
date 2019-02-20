@@ -23,9 +23,9 @@ export class CoursesComponent implements OnInit {
     console.log("onSave Sudah diKlick", $event);
   }
 
-  // onDivClick($event){
-  //   console.log("onDivClick Sudah diKlick", $event);
-  // }
+  onDivClick($event){
+    console.log("onDivClick Sudah diKlick", $event);
+  }
 
   // onKeyUp(){
   //   console.log(this.nama);
