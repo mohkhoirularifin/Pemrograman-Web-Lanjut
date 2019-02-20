@@ -62,7 +62,8 @@
 
 <input
   type="text"
-  #nama (keyup.enter)="onKeyUp(nama.value)"
+  [value]="nama"
+  (keyup.enter)="nama = $event.target.value; onKeyUp()"
 />
 
 <!-- <input
