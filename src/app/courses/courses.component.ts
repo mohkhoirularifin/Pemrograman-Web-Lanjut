@@ -16,7 +16,7 @@ export class CoursesComponent implements OnInit {
   percobaan = 'ini percobaan';
   colSpan = 2;
   isActive=false;
-  // nama = 'Khoirul';
+  nama = 'Khoirul';
 
   onSave($event){
     $event.stopPropagation();
@@ -28,7 +28,7 @@ export class CoursesComponent implements OnInit {
   }
 
   onKeyUp(nama){
-    console.log(nama);
+    console.log(this.nama);
   }
 
   constructor(private service:CoursesService) { 
