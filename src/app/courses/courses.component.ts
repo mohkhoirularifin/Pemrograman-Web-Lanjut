@@ -19,7 +19,7 @@ export class CoursesComponent implements OnInit {
   // nama = 'Khoirul';
 
   onSave($event){
-    // $event.stopPropagation();
+    $event.stopPropagation();
     console.log("onSave Sudah diKlick", $event);
   }
 
@@ -27,9 +27,10 @@ export class CoursesComponent implements OnInit {
     console.log("onDivClick Sudah diKlick", $event);
   }
 
-  // onKeyUp(){
-  //   console.log(this.nama);
-  // }
+  onKeyUp(nama){
+    console.log(nama);
+  }
+
   constructor(private service:CoursesService) { 
     this.Courses=service.getCourses();
   }
