@@ -14,8 +14,8 @@ export class CoursesComponent implements OnInit {
   binding = 'property-binding';
   imageUrl = 'http://lorempixel.com/400/200';
   // percobaan = 'ini percobaan';
-  // colSpan = 2;
-  // isActive=true;
+  colSpan = 2;
+  isActive=true;
   // nama = 'Khoirul';
 
   // onSave($event){
