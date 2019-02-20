@@ -19,11 +19,9 @@
 
 <!-- String interpolasi line 22-->
 <!-- Properti Binding line 23-->
+
 <h2>{{ binding }}</h2>
 <h2 [textContent]="binding"></h2>
-
-<h2>{{ percobaan }}</h2>
-<h2 [textContent]="percobaan"></h2>
 
 <img src="{{ imageUrl }}" />
 <img [src]="imageUrl" />
@@ -31,16 +29,11 @@
 
 <table>
   <tr>
-    <td [attr.colspan]="colSpan"></td>
+    <td [attr.colspan]='colSpan'></td>
   </tr>
 </table>
 
-<!-- <button
-  type="button"
-  class="btn btn-primary"
->
-  Tambah
-</button> -->
+<button type="button" class="btn btn-primary">Tambah</button>
 
 <button
   type="button"
@@ -60,14 +53,14 @@
   </button>
 </div>
 
-<input
+<!-- <input
   type="text"
   [value]="nama"
   (keyup.enter)="nama = $event.target.value; onKeyUp()"
-/>
+/> -->
 
-<!-- <input
+<input
   type="text"
   [(ngModel)]="nama"
   (keyup.enter)="onKeyUp()"
-/> -->
+/>
