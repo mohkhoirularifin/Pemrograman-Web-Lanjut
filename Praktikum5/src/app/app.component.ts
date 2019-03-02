@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Praktikum 4';
+  title = 'belajar-angular';
+
+  post={
+    titles:"ini post",
+    isFavorite:true
+  }
 }
