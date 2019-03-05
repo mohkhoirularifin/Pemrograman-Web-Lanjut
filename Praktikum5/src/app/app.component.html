@@ -26,7 +26,7 @@
       <app-server></app-server>
       <app-favorite
       [aliasFavorite]="post.isFavorite"
-      (change)="onFavoriteChanged()"
+      (change)="onFavoriteChanged($event)"
       ></app-favorite>
     </div>
     <!-- <div app-server></div> -->
