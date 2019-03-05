@@ -25,7 +25,8 @@
       <app-servers></app-servers>
       <app-server></app-server>
       <app-favorite
-      [isFavorite]="post.isFavorite"
+      [aliasFavorite]="post.isFavorite"
+      (change)="onFavoriteChanged()"
       ></app-favorite>
     </div>
     <!-- <div app-server></div> -->
