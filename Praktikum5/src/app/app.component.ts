@@ -12,4 +12,8 @@ export class AppComponent {
     titles:"ini post",
     isFavorite:true
   }
+
+  onFavoriteChanged(){
+    console.log("Favorite Changed");
+  }
 }
