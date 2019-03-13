@@ -86,7 +86,8 @@
   </div>  
 </ng-template> -->
 <br>
-&nbsp; <input type="text" appInputFormat>
+<!-- &nbsp; <input type="text" appInputFormat [format]="'uppercase'"> -->
+&nbsp; <input type="text" [appInputFormat] ="'uppercase'">
 <router-outlet></router-outlet>
 <!-- <span 
 class="fa"
