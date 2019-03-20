@@ -20,4 +20,9 @@ export class TemplateDrivenComponent implements OnInit {
     }
   }
 
+  onSubmit(){
+    console.log("hasil inpputan:");
+    console.log(this.mahasiswa);
+  }
+
 }
