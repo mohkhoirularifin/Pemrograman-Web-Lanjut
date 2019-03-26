@@ -17,6 +17,11 @@ import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_di
 
 // }
 export class ContactComponent{
+
+  contactMethods=[
+    {id:1,name:'email'},
+    {id:2,name:'phone'}
+  ]
   log(z){
     console.log(z);
   }
