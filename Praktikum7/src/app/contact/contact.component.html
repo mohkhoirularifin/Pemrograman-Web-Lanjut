@@ -65,7 +65,7 @@
           name="comment"
         ></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" [disabled]="!form.valid" class="btn btn-primary">
         button
       </button>
     </form>
