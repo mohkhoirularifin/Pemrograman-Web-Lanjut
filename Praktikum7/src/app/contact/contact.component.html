@@ -65,6 +65,14 @@
           name="comment"
         ></textarea>
       </div>
+      <div class="checkbox">
+        <label for="">
+          <input type="checkbox" ngModel name="isSubscribe">Subscribe Jika Ingin Berlangganan
+        </label>
+        <p>
+          {{form.value|json}}
+        </p>
+      </div>
       <button type="submit" [disabled]="!form.valid" class="btn btn-primary">
         button
       </button>
