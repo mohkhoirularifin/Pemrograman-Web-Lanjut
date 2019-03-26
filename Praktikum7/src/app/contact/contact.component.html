@@ -3,15 +3,19 @@
     <form action="">
       <div class="form-group">
         <label for="nama"> Nama </label>
-        <input type="text" id="nama" class="form-control" [(ngModel)]="nama" />
+        <input type="text" id="nama" class="form-control" [(ngModel)]="nama" name="nama" />
       </div>
       <div class="form-group">
         <label for="comment"> Comment: </label>
-        <textarea class="form-control" rows="5" id="comment" [(ngModel)]="comment"></textarea>
+        <textarea class="form-control" rows="5" id="comment" [(ngModel)]="comment" name="comment"></textarea>
       </div>
       <button type="button" class="btn btn-primary">
         button
       </button>
+      <!-- menampilkan hasil inputan -->
+      <p> Hasil Inputan </p>
+      <h1> Nama = {{nama}} </h1>
+      <h1> Comment = {{comment}} </h1>
     </form>
   </div>
 </div>
