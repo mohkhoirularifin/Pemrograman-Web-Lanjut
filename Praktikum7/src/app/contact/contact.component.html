@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col-md-6">
     <form #form="ngForm" (ngSubmit)="submit(form)">
-      <!-- <div class="form-group">
+      <div class="form-group">
         <label for="nama"> Nama </label>
         <input
           type="text"
@@ -26,8 +26,8 @@
             Nama Tidak Sesuai Dengan Pattern
           </div>
         </div>
-      </div> -->
-      <div ngModelGroup="contact">
+      </div>
+      <!-- <div ngModelGroup="contact" #contact="ngModelGroup">
           <div class="form-group">
               <label for="nama"> Nama </label>
               <input
@@ -54,7 +54,7 @@
                 </div>
               </div>
             </div>
-      </div>
+      </div> -->
       <div class="form-group">
         <label for="comment"> Comment: </label>
         <textarea
