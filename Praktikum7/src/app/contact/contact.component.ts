@@ -17,13 +17,13 @@ import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_di
 
 // }
 export class ContactComponent{
-  log(x){
-    console.log(x);
+  log(z){
+    console.log(z);
   }
 
   submit(form){
     console.log(form);
-    formArrayNameProvider.valid;
+    form.valid;
   }
 }
 
