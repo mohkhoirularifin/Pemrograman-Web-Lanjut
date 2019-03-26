@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
 
 @Component({
   selector: 'app-contact',
@@ -19,4 +20,11 @@ export class ContactComponent{
   log(x){
     console.log(x);
   }
+
+  submit(form){
+    console.log(form);
+    formArrayNameProvider.valid;
+  }
 }
+
+
