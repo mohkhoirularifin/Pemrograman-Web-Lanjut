@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col-md-6">
     <form #form="ngForm" (ngSubmit)="submit(form)">
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="nama"> Nama </label>
         <input
           type="text"
@@ -26,6 +26,34 @@
             Nama Tidak Sesuai Dengan Pattern
           </div>
         </div>
+      </div> -->
+      <div ngModelGroup="contact">
+          <div class="form-group">
+              <label for="nama"> Nama </label>
+              <input
+                type="text"
+                id="nama"
+                class="form-control"
+                required
+                minlength="3"
+                maxlength="10"
+                pattern="pisang"
+                ngModel
+                #firstName="ngModel"
+                (change)="log(firstName)"
+                name="nama"
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="firstName.touched && !firstName.valid"
+              >
+                <div *ngIf="firstName.errors['required']">Nama Harus Diisi</div>
+                <div *ngIf="firstName.errors['minlength']">Nama Min 3 Kata</div>
+                <div *ngIf="firstName.errors['pattern']">
+                  Nama Tidak Sesuai Dengan Pattern
+                </div>
+              </div>
+            </div>
       </div>
       <div class="form-group">
         <label for="comment"> Comment: </label>
