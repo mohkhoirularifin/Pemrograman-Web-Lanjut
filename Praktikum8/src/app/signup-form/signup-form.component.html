@@ -12,7 +12,9 @@
       class="alert alert-danger"
     >
       <div *ngIf="username.errors.required">Username is required</div>
-      <div *ngIf="username.errors.minlength">Username should minimum 5 charactters</div>
+      <div *ngIf="username.errors.minlength">
+        Username should minimum {{username.errors.minlength.requiredLength}} characters
+      </div>
     </div>
   </div>
   <div class="form-group">
