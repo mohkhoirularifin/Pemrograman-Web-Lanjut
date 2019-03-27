@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReactiveFormComponent,
     TemplateDrivenComponent,
-    ContactComponent
+    ContactComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
