@@ -7,6 +7,12 @@
       type="text"
       class="form-control"
     />
+    <div
+      *ngIf="form.get('username').touched && form.get('username').invalid"
+      class="alert alert-danger"
+    >
+      Username is Required
+    </div>
   </div>
   <div class="form-group">
     <label for="password">Password</label>
