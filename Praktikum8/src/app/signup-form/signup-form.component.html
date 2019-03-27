@@ -13,7 +13,11 @@
     >
       <div *ngIf="username.errors.required">Username is required</div>
       <div *ngIf="username.errors.minlength">
-        Username should minimum {{username.errors.minlength.requiredLength}} characters
+        Username should minimum
+        {{ username.errors.minlength.requiredLength }} characters
+      </div>
+      <div *ngIf="username.errors.cannotContainSpace">
+        Cannot Contain Space
       </div>
     </div>
   </div>
