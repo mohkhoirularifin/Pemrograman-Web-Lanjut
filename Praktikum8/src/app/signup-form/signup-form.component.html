@@ -10,6 +10,7 @@
       type="text"
       class="form-control"
     />
+    <div *ngIf="username.pending"> Checking For Uniques.....</div>
     <div
       *ngIf="username.touched && username.invalid"
       class="alert alert-danger"
