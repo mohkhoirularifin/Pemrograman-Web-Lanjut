@@ -10,8 +10,8 @@ export class PostsComponent  {
   posts: any[];
   constructor(http: Http) {
     http.get('http://jsonplaceholder.typicode.com/posts')
-      .subscribe(Response => {
-        this.posts = Response.json();
+      .subscribe(response => {
+        this.posts = response.json();
       });
    }
 }
