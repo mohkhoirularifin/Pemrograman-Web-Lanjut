@@ -12,6 +12,9 @@ import { PostsComponent } from './posts/posts.component';
 @NgModule({
   declarations: [
     AppComponent,
+    // TemplateDrivenComponent,
+    // ContactComponent,
+    // SignupFormComponent,
     PostsComponent
   ],
   imports: [
