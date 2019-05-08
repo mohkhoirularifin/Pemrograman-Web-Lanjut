@@ -20,7 +20,8 @@ export class AuthService {
       });
   }
 
-  logout() { 
+  logout() {
+    localStorage.removeItem('token'); 
   }
 
   isLoggedIn() { 
