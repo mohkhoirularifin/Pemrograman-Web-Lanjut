@@ -60,13 +60,16 @@
           name="comment"
         ></textarea>
       </div>
+      <button type="submit" [disabled]="!form.valid" class="btn btn-primary">
+        button
+      </button>
       <p>
         {{ form.value | json }}
       </p>
       <h4>Your Data</h4>
-      <button type="submit" [disabled]="!form.valid" class="btn btn-primary">
-        button
-      </button>
+      <p>Username: {{nama}}</p>
+      <p>Email: {{email}}</p>
+      <p>Message: {{comment}}</p>
     </form>
   </div>
 </div>

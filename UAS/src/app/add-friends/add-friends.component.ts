@@ -5,11 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './add-friends.component.html',
   styleUrls: ['./add-friends.component.css']
 })
-export class AddFriendsComponent implements OnInit {
+export class AddFriendsComponent {
 
-  constructor() { }
-
-  ngOnInit() {
+  log(z){
+    console.log(z);
   }
 
+  submit(form){
+    console.log(form);
+    form.valid;
+  }
 }

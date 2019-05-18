@@ -38,7 +38,8 @@ import { AddFriendsComponent } from './add-friends/add-friends.component';
       {path:'form', component:HomeComponent},
       {path:'post', component:PostsComponent},
       {path:'profile/:id', component:ProfileComponent},
-      {path:'contact', component:ContactComponent}])
+      {path:'contact', component:ContactComponent},
+      {path:'add', component:AddFriendsComponent}])
   ],
   providers: [],
   bootstrap: [AppComponent]
