@@ -6,22 +6,8 @@ import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_di
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-// export class ContactComponent implements OnInit {
-//   @Input() nama:string;
-//   @Input() comment:string;
-
-//   constructor() { }
-
-//   ngOnInit() {
-//   }
-
-// }
 export class ContactComponent{
 
-  contactMethods=[
-    {id:1,name:'email'},
-    {id:2,name:'phone'}
-  ]
   log(z){
     console.log(z);
   }

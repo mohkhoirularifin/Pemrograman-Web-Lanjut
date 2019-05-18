@@ -1,8 +1,11 @@
+<br>
+  <h3 style=text-align:center> Contact Me</h3>
+  <hr>
 <div class="container">
-  <div class="col-md-6">
+  <div class="col-md-12">
     <form #form="ngForm" (ngSubmit)="submit(form)">
       <div class="form-group">
-        <label for="nama"> Nama </label>
+        <label for="nama">Your Name</label>
         <input
           type="text"
           id="nama"
@@ -10,7 +13,6 @@
           required
           minlength="3"
           maxlength="10"
-          pattern="pisang"
           ngModel
           #firstName="ngModel"
           (change)="log(firstName)"
@@ -22,41 +24,33 @@
         >
           <div *ngIf="firstName.errors['required']">Nama Harus Diisi</div>
           <div *ngIf="firstName.errors['minlength']">Nama Min 3 Kata</div>
-          <div *ngIf="firstName.errors['pattern']">
-            Nama Tidak Sesuai Dengan Pattern
-          </div>
         </div>
       </div>
-      <!-- <div ngModelGroup="contact" #contact="ngModelGroup">
-          <div class="form-group">
-              <label for="nama"> Nama </label>
-              <input
-                type="text"
-                id="nama"
-                class="form-control"
-                required
-                minlength="3"
-                maxlength="10"
-                pattern="pisang"
-                ngModel
-                #firstName="ngModel"
-                (change)="log(firstName)"
-                name="nama"
-              />
-              <div
-                class="alert alert-danger"
-                *ngIf="firstName.touched && !firstName.valid"
-              >
-                <div *ngIf="firstName.errors['required']">Nama Harus Diisi</div>
-                <div *ngIf="firstName.errors['minlength']">Nama Min 3 Kata</div>
-                <div *ngIf="firstName.errors['pattern']">
-                  Nama Tidak Sesuai Dengan Pattern
-                </div>
-              </div>
-            </div>
-      </div> -->
       <div class="form-group">
-        <label for="comment"> Comment: </label>
+          <label for="email">Your Email:</label>
+          <input
+            type="text"
+            id="email"
+            class="form-control"
+            required
+            email
+            ngModel
+            #emailUser="ngModel"
+            (change)="log(emailUser)"
+            name="email"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="emailUser.touched && !emailUser.valid"
+          >
+            <div *ngIf="emailUser.errors['required']">Email Harus Diisi</div>
+            <div *ngIf="emailUser.errors['email']">
+              Harus Mengandung unsur email
+            </div>
+          </div>
+        </div>
+      <div class="form-group">
+        <label for="comment"> Your Message: </label>
         <textarea
           class="form-control"
           rows="5"
@@ -65,42 +59,10 @@
           name="comment"
         ></textarea>
       </div>
-      <div class="checkbox">
-        <label for="">
-          <input type="checkbox" ngModel name="isSubscribe" />Subscribe Jika
-          Ingin Berlangganan
-        </label>
-      </div>
-      <div class="form-group">
-        <label for="contactMethod">Contact Method</label>
-        <select
-          multiple
-          ngModel
-          name="contactMethod"
-          id="contactMethod"
-          class="form-control"
-        >
-          <option *ngFor="let method of contactMethods" [ngValue]="method">{{
-            method.name
-          }}</option>
-        </select>
-      </div>
-      <!-- radio button -->
-      <div *ngFor="let method of contactMethods" class="radio">
-        <label for="">
-          <input
-            ngModel
-            type="radio"
-            name="contactMethodRadio"
-            [value]="method.id"
-          />
-          {{ method.name }}
-        </label>
-      </div>
-
       <p>
         {{ form.value | json }}
       </p>
+      <h4>Your Data</h4>
       <button type="submit" [disabled]="!form.valid" class="btn btn-primary">
         button
       </button>
