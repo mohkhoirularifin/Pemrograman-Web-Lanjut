@@ -8,23 +8,24 @@ import { ContactComponent } from './contact/contact.component';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { PostsComponent } from './posts/posts.component';
-import { FormMemberComponent } from './form-member/form-member.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
+import { AddFriendsComponent } from './add-friends/add-friends.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormMemberComponent,
+    TemplateDrivenComponent,
     HomeComponent,
     NavbarComponent,
     PostsComponent,
     NotFoundComponent,
     ProfileComponent,
-    ContactComponent
+    ContactComponent,
+    AddFriendsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +35,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpModule,
     RouterModule.forRoot([
       {path:'', component:HomeComponent},
-      {path:'form', component:FormMemberComponent},
+      {path:'form', component:HomeComponent},
       {path:'post', component:PostsComponent},
       {path:'profile/:id', component:ProfileComponent},
       {path:'contact', component:ContactComponent}])
