@@ -7,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddFriendsComponent {
 
-  log(z){
-    console.log(z);
-  }
+  friends=[
+    {id:1, name: "Angga", email: "angga@addAllToArray.com", contact: "097654345667"}
+  ]
 
   submit(form){
-    console.log(form);
+    this.friends.push({id: this.friends.length +1, name: this.uppercase(form.nama), email: form.email,contact: form.contact});
     form.valid;
+  }
+
+  uppercase(nama){
+    return nama.toUpperCase();
   }
 }
