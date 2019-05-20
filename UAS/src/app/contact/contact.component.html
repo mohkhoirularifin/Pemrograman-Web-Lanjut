@@ -3,7 +3,7 @@
   <hr>
 <div class="container">
   <div class="col-md-12">
-    <form #form="ngForm" (ngSubmit)="submit(form)">
+    <form #form="ngForm" (ngSubmit)="submit(form.value)">
       <div class="form-group">
         <label for="nama">Your Name</label>
         <input
@@ -60,16 +60,16 @@
           name="comment"
         ></textarea>
       </div>
-      <button type="submit" [disabled]="!form.valid" class="btn btn-primary">
+      <button type="submit" [disabled]="!form.valid" class="btn btn-primary" (click) ="submit()">
         button
       </button>
-      <p>
-        {{ form.value | json }}
-      </p>
-      <h4>Your Data</h4>
-      <p>Username: {{nama}}</p>
-      <p>Email: {{email}}</p>
-      <p>Message: {{comment}}</p>
     </form>
+    <hr>
+    <div *ngIf="yourData">
+      <h2><b>Your Data</b></h2>
+      <p>Username: {{form.value.nama|json}}</p>
+      <p>Email: {{form.value.email|json}}</p>
+      <p>Message: {{form.value.comment|json}}</p>
+    </div>
   </div>
 </div>
