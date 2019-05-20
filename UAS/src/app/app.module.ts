@@ -35,7 +35,7 @@ import { AddFriendsComponent } from './add-friends/add-friends.component';
     HttpModule,
     RouterModule.forRoot([
       {path:'', component:HomeComponent},
-      {path:'form', component:HomeComponent},
+      {path:'home', component:HomeComponent},
       {path:'post', component:PostsComponent},
       {path:'profile/:id', component:ProfileComponent},
       {path:'contact', component:ContactComponent},
