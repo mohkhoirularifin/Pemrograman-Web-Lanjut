@@ -7,17 +7,18 @@ import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_di
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent{
-  @Input() nama:string;
-  @Input() email:string;
-  @Input() comment:string;
+  yourData: boolean;
 
-  log(z){
-    console.log(z);
+  data=[
+    {nama: '', email: '', comment: ''}
+  ]
+
+  log(x){
+    console.log(x);
   }
 
   submit(form){
-    console.log(form);
-    form.valid;
+    this.yourData = true;
   }
 }
 
