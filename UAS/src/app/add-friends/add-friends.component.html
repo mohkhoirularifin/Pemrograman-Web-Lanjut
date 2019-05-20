@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="col-md-8 offset-md-2">
-    <form #form="ngForm" (ngSubmit)="submit(form)">
+    <form #form="ngForm" (ngSubmit)="submit(form.value)">
       <div class="form-group row">
         <label for="nama"class="col-sm-3 col-form-label">Name</label>
         <div class="col-sm-9">
@@ -98,30 +98,18 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Contact</th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Contact</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+    <tr *ngFor="let friend of friends">
+      <th scope="row">{{friend.id}}</th>
+      <td>{{friend.name}}</td>
+      <td>{{friend.email}}</td>
+      <td>{{friend.contact}}</td>
     </tr>
   </tbody>
 </table>
