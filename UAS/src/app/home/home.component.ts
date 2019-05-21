@@ -1,26 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { AuthService } from './../services/auth.service';
+import { Component } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
+  invalidLogin: boolean; 
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router, 
+    private authService: AuthService) { }
 
-  username: string;
-  password: string;
-  ngOnInit() {
-  }
-
-  login() : void{
-    if(this.username == 'khoirul' && this.password == 'khoirul'){
-      this.router.navigate(["/add"]);
-    }else{
-      alert("Invalid Credentials");
-    }
+  login(credentials) {
+    this.authService.login(credentials)
+      .subscribe(result => { 
+        if (result)
+          this.router.navigate(['/add']);
+        else  
+          this.invalidLogin = true; 
+      });
   }
 }
