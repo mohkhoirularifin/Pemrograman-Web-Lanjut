@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-friends.component.css']
 })
 export class AddFriendsComponent {
-
+  name: string;
   friends=[
     {id:1, name: "Angga", email: "angga@addAllToArray.com", contact: "097654345667"}
   ]
@@ -18,5 +18,11 @@ export class AddFriendsComponent {
 
   uppercase(nama){
     return nama.toUpperCase();
+  }
+
+  search(){
+    this.friends.filter(res =>{
+      return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+    });
   }
 }
