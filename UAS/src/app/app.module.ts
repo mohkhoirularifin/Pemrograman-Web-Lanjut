@@ -9,24 +9,17 @@ import { HttpModule, BaseRequestOptions } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
-import { TemplateDrivenComponent } from './template-driven/template-driven.component';
-import { SignupFormComponent } from './signup-form/signup-form.component';
-import { PostsComponent } from './posts/posts.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
-import { ProfileComponent } from './profile/profile.component';
 import { AddFriendsComponent } from './add-friends/add-friends.component';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TemplateDrivenComponent,
     HomeComponent,
     NavbarComponent,
-    PostsComponent,
-    ProfileComponent,
     ContactComponent,
     AddFriendsComponent
   ],
@@ -40,8 +33,6 @@ import { FilterPipeModule } from 'ngx-filter-pipe';
     RouterModule.forRoot([
       {path:'', component:HomeComponent},
       {path:'home', component:HomeComponent},
-      {path:'post', component:PostsComponent},
-      {path:'profile/:id', component:ProfileComponent},
       {path:'contact', component:ContactComponent},
       {path:'add', component:AddFriendsComponent}])
   ],
