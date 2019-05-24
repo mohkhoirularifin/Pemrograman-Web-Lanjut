@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 import { AddFriendsComponent } from './add-friends/add-friends.component';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AddFriendsComponent } from './add-friends/add-friends.component';
     ReactiveFormsModule,
     FormsModule,
     HttpModule,
+    FilterPipeModule,
     RouterModule.forRoot([
       {path:'', component:HomeComponent},
       {path:'home', component:HomeComponent},
