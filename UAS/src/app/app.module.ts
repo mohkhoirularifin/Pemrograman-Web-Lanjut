@@ -13,7 +13,6 @@ import { TemplateDrivenComponent } from './template-driven/template-driven.compo
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { PostsComponent } from './posts/posts.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
@@ -27,7 +26,6 @@ import { FilterPipeModule } from 'ngx-filter-pipe';
     HomeComponent,
     NavbarComponent,
     PostsComponent,
-    NotFoundComponent,
     ProfileComponent,
     ContactComponent,
     AddFriendsComponent
