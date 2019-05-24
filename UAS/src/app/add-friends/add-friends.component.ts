@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FilterPipe } from 'ngx-filter-pipe';
 
 @Component({
   selector: 'app-add-friends',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-friends.component.css']
 })
 export class AddFriendsComponent {
-  name: string;
+  userFilter: any = { name: '' };
+  
   friends=[
     {id:1, name: "Angga", email: "angga@addAllToArray.com", contact: "097654345667"}
   ]
@@ -20,9 +22,7 @@ export class AddFriendsComponent {
     return nama.toUpperCase();
   }
 
-  search(){
-    this.friends.filter(res =>{
-      return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
-    });
+  constructor(private filterPipe: FilterPipe) {
+    console.log(filterPipe.transform(this.friends, { name: ''}));
   }
 }
