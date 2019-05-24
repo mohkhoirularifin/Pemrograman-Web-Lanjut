@@ -51,24 +51,6 @@ export class ContactComponent implements OnInit{
     this.submitType = "Save";
   }
   
-  // data=[
-  //   {nama: '', email: '', comment: '', namaLabel: 'username'}
-  // ]
-  // username=[
-  //   {username: 'username'}
-  // ]
-
-
-  // log(x){
-  //   console.log(x);
-  // }
-
-  // submit(form){
-  //   this.data.push({nama: form.nama, email: form.email, comment: form.comment, namaLabel: form.namaLabel});
-  //   form.valid;
-  //   this.yourData = true;
-  // }
-
   constructor() {}
 
   ngOnInit(){}
