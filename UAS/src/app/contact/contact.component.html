@@ -3,44 +3,121 @@
   <hr>
 <div class="container">
   <div class="col-md-12">
-    <form #form="ngForm" (ngSubmit)="submit(form.value)">
+    <form [formGroup]="form" (ngSubmit)="onSave()">
+      <div class="form-group">
+        <label for="nama">Nama</label>
+        <input 
+        (click) = "onNew()"
+        formControlName="nama"
+        id="nama"
+        type="text"
+        class="form-control"
+        [(ngModel)]="inputModel.username"
+        />
+          <div
+          *ngIf="form.get('nama').touched && form.get('nama').invalid"
+          class="alert alert-danger"
+          >
+            Username is Required
+          </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+        formControlName="email"
+        id="email"
+        type="text"
+        class="form-control"
+        [(ngModel)]="inputModel.email"
+        />
+        <div
+        *ngIf="email.touched && email.invalid"
+        class="alert alert-danger"
+        >
+          <div *ngIf="email.errors.required">Email is Required</div>
+          <div *ngIf="email.errors.email">/must be Email</div>
+        </div>
+      </div>
+    </form>
+    <form (ngSubmit)="onSave()">
+      <div class="form-group">
+        <label for="message"> Your Message: </label>
+        <textarea
+        class="form-control"
+        rows="5"
+        id="message"
+        [(ngModel)]="inputModel.pesan"
+        name="message"
+        ></textarea>
+      </div>
+      <button type="submit" [disabled]="!form.valid" class="btn btn-primary">
+        button
+      </button>
+    </form>
+    <tr *ngFor="let registration of inputData">
+      <h3> {{registration.labelData}} </h3>
+      <p> {{registration.labelName}} : {{registration.username}} </p>
+      <p> {{registration.labelEmail}} : {{registration.email}} </p>
+      <p> {{registration.labelMessage}} : {{registration.pesan}} </p>
+    </tr>
+  </div>
+</div>
+
+<!-- <div class="form-group">
+        <label for="message">Message</label>
+        <textarea
+        class="form-control"
+        rows="5"
+        id="comment"
+        [(ngModel)]="inputModel.message"
+        >
+          Text area cant get value with ng model
+        </textarea>
+      </div>
+      <button type="submit" [disabled]="!form.valid" class="btn btn-primary">
+        button
+      </button> -->
+
+<!-- <form #form="ngForm" (ngSubmit)="submit(form.value)"> -->
+    <!-- <form [formGroup]="form" (ngSubmit)="onSave()">
       <div class="form-group">
         <label for="nama">Your Name</label>
         <input
+          formControlName="nama"
           type="text"
           id="nama"
           class="form-control"
           required
           minlength="3"
           maxlength="10"
-          ngModel
-          #firstName="ngModel"
-          (change)="log(firstName)"
+          [(ngModel)]="inputModel.username"
           name="nama"
-        />
-        <div
+          (click) = "onNew()"
+        /> -->
+        <!-- <div
           class="alert alert-danger"
           *ngIf="firstName.touched && !firstName.valid"
         >
           <div *ngIf="firstName.errors['required']">Nama Harus Diisi</div>
           <div *ngIf="firstName.errors['minlength']">Nama Min 3 Kata</div>
-        </div>
-      </div>
+        </div> -->
+      <!-- </div>
       
       <div class="form-group">
           <label for="email">Your Email:</label>
           <input
+            formControlName="email"
             type="text"
             id="email"
             class="form-control"
             required
             email
-            ngModel
-            #emailUser="ngModel"
-            (change)="log(emailUser)"
+            [(ngModel)]="inputModel.email"
             name="email"
-          />
-          <div
+          /> -->
+          
+          <!-- <div
             class="alert alert-danger"
             *ngIf="emailUser.touched && !emailUser.valid"
           >
@@ -48,28 +125,38 @@
             <div *ngIf="emailUser.errors['email']">
               Harus Mengandung unsur email
             </div>
-          </div>
-        </div>
+          </div> -->
+        <!-- </div>
       <div class="form-group">
         <label for="comment"> Your Message: </label>
         <textarea
+          formControlName="comment"
           class="form-control"
           rows="5"
           id="comment"
-          ngModel
+          [(ngModel)]="inputModel.message"
           name="comment"
         ></textarea>
       </div>
-      <button type="submit" [disabled]="!form.valid" class="btn btn-primary" (click) ="submit()">
+      <button type="submit" [disabled]="!form.valid" class="btn btn-primary">
         button
       </button>
     </form>
     <hr>
-    <div *ngIf="yourData">
+    <tr *ngFor="let registration of inputData">
+        <h3> {{registration.labelData}} </h3>
+         <p> {{registration.labelName}} : {{registration.username}} </p>
+         <p> {{registration.labelEmail}} : {{registration.email}} </p>
+         <p> {{registration.labelMessage}} : {{registration.message}} </p>
+    </tr> -->
+    <!-- <h2 *ngIf="yourData">Your data</h2>
+    <div *ngFor="let item of data">
+      <p>Username:{{item.nama}}</p>
+      <p>{{item.email}}</p>
+      <p>{{item.comment}}</p>
+    </div> -->
+    <!-- <div *ngIf="yourData">
       <h2><b>Your Data</b></h2>
       <p>Username: {{form.value.nama|json}}</p>
       <p>Email: {{form.value.email|json}}</p>
-      <p>Message: {{form.value.comment|json}}</p>
-    </div>
-  </div>
-</div>
+      <p>Message: {{form.value.comment|json}}</p> -->
