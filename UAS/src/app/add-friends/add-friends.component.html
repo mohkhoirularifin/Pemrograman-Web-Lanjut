@@ -93,9 +93,10 @@
 <br>
 <h3 style=text-align:center>My Friends</h3>
 
-<input type="text" #myInput [(ngModel)]="name" (input)="search()">
 <div class="container">
   <div class="col-md-8 offset-md-2">
+      <input class="form-control" type="text" [(ngModel)]="userFilter.name" placeholder="Type to filter by name" aria-label="Search">
+      <br>
 <table class="table">
   <thead>
     <tr>
@@ -106,12 +107,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let friend of friends">
+    <tr *ngFor="let friend of friends| filterBy: userFilter">
       <th scope="row">{{friend.id}}</th>
-      <td>{{friend.name}}</td>
-      <td>{{friend.email}}</td>
-      <td>{{friend.contact}}</td>
+      <th>{{friend.name}}</th>
+      <th>{{friend.email}}</th>
+      <th>{{friend.contact}}</th>
     </tr>
+    <h4 *ngIf="(friends | filterBy: userFilter).length === 0">
+        No matching elements
+    </h4>
   </tbody>
 </table>
 </div>
